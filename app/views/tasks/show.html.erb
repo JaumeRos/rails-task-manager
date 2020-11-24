@@ -1,0 +1,10 @@
+<h2>Title: <%= @task.title %></h2>
+<p>These are the details: <%= @task.details %></p>
+<p>It was created at: <%= @task.created_at%></p>
+<p>Has it been completed? <%= @task.completed%></p>
+
+<%= link_to "Back to home", tasks_path %>
+
+<%= link_to "Bro u wanna edit this", edit_task_path(@task) %>
+
+<%= link_to "Delete", delete_task_path(@task), method: :delete %>

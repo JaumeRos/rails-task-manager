@@ -1,0 +1,21 @@
+
+<div class="container">
+<h1> Here are the tasks: </h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <% if task.completed %>
+        😀
+      <% else %>
+        😡
+      <% end %>
+      <%= link_to task.title, task_path(task)%>
+      <%= link_to "Delete", delete_task_path(task), method: :delete %>
+      </li>
+  <% end %>
+</ul>
+
+<h2>Broski why don't you add a new task?</h2>
+  <%= link_to "Add a new Task", tasks_new_path %>
+</div>
